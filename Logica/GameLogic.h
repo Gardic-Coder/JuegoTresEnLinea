@@ -27,7 +27,6 @@ public:
 class Tablero {
 private:
     std::array<std::array<Casilla, 3>, 3> casillas;
-
 public:
     Tablero();
     
@@ -43,30 +42,41 @@ private:
     int numConquistadas;
 
 public:
-    Jugador(const std::string& nom);
+    Jugador(const std::string& nom) : nombre(nom), numConquistadas(0) {}
     
     void conquistarCasilla(Casilla* casilla); 
 	void eliminarCasilla(); 
-	void limpiarCasillasConquistadas(); 
 	const std::array<Casilla*, 3>& getCasillasConquistadas() const; 
-	std::string getNombre() const; 
-	void setNombre(const std::string& nom); 
+	std::string getNombre() const;
 };
 
-class GameController {
+class ControladorJuego { 
 private: 
-	Tablero& tablero;
-	Jugador& jugador1; 
-	Jugador& jugador2; 
-	int fila; 
-	int columna; 
+	Tablero* tablero; 
+	Jugador* jugador1; 
+	Jugador* jugador2; 
+	int cursorFila; 
+	int cursorColumna; 
+	bool enMenu;
+	int numOpciones;
+	int turnos;
 	
 public: 
-	GameController(Tablero& tab, Jugador& j1, Jugador& j2); 
-	
-	void iniciarJuego(); 
-	
-private: 
-	void moverCursor(int key); 
-	void procesarEntrada();
+	ControladorJuego(Tablero* t, Jugador* j1, Jugador* j2); 
+	ControladorJuego(int numOpcMenu);
+	~ControladorJuego();
+	void moverCursor(int nuevaFila, int nuevaColumna); 
+	void moverCursorArriba(); 
+	void moverCursorAbajo(); 
+	void moverCursorIzquierda(); 
+	void moverCursorDerecha(); 
+	void seleccionar(); 
+	void cancelar(); 
+	void guardarYSalir(); 
+	void cambiarModo();
+	void setNumOpciones(int numOpc);
+	void actualizarCursor(int nuevaPos);
+    int getCursorPos() const { return cursorFila; }
+    int getTurnos() const;
 };
+
