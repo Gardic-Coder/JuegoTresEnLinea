@@ -27,7 +27,6 @@ public:
 class Tablero {
 private:
     std::array<std::array<Casilla, 3>, 3> casillas;
-
 public:
     Tablero();
     
