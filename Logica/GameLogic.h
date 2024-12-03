@@ -6,12 +6,6 @@
 #include <conio.h> // Para detectar las teclas presionadas en sistemas Windows 
 #include <iostream>
 
-
-class GameLogic {
-public:
-    void update();
-};
-
 class Casilla {
 private:
     int estado; // 0 = libre, 1 = jugador 1, 2 = jugador 2
@@ -20,19 +14,19 @@ private:
     bool cursor;
 
 public:
-    Casilla(int pos);
-
-    int getEstado() const { return estado; }
-    void setEstado(int e, int jugada) { estado = e; numeroJugada = jugada; }
-    int getPosicion() const { return posicion; }
-    int getNumeroJugada() const { return numeroJugada; }
-    void setCursor(bool c) { cursor = c; }
-    bool getCursor() const { return cursor; }
+	Casilla(int pos) : estado(0), posicion(pos), numeroJugada(-1), cursor(false) {} 
+	
+	int getEstado() const { return estado; } 
+	void setEstado(int e, int jugada) { estado = e; numeroJugada = jugada; } 
+	int getPosicion() const { return posicion; } 
+	int getNumeroJugada() const { return numeroJugada; } 
+	void setCursor(bool c) { cursor = c; } 
+	bool getCursor() const { return cursor; }
 };
 
 class Tablero {
 private:
-    std::array<Casilla, 9> casillas;
+    std::array<std::array<Casilla, 3>, 3> casillas;
 
 public:
     Tablero();
@@ -47,8 +41,6 @@ private:
     std::string nombre;
     std::array<Casilla*, 3> casillasConquistadas;
     int numConquistadas;
-    int victorias; 
-	int derrotas;
 
 public:
     Jugador(const std::string& nom);
@@ -59,10 +51,6 @@ public:
 	const std::array<Casilla*, 3>& getCasillasConquistadas() const; 
 	std::string getNombre() const; 
 	void setNombre(const std::string& nom); 
-	int getVictorias() const; 
-	void setVictorias(int v); 
-	int getDerrotas() const; 
-	void setDerrotas(int d);
 };
 
 class GameController {
