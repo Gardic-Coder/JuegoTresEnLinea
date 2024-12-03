@@ -43,14 +43,12 @@ private:
     int numConquistadas;
 
 public:
-    Jugador(const std::string& nom);
+    Jugador(const std::string& nom) : nombre(nom), numConquistadas(0) {}
     
     void conquistarCasilla(Casilla* casilla); 
 	void eliminarCasilla(); 
-	void limpiarCasillasConquistadas(); 
 	const std::array<Casilla*, 3>& getCasillasConquistadas() const; 
 	std::string getNombre() const; 
-	void setNombre(const std::string& nom); 
 };
 
 class GameController {
