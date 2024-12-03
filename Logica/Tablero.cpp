@@ -9,11 +9,11 @@ Tablero::Tablero() {
 		} 
 	}
 
-Tablero::getCasilla(int fila, int columna){
+Casilla& Tablero::getCasilla(int fila, int columna){
 	return casillas[fila][columna];
 }
 
-Tablero::verificarGanador(int jugador){
+bool Tablero::verificarGanador(int jugador){
 	// Verificar filas 
 	for (int fila = 0; fila < 3; ++fila) { 
 		if (casillas[fila][0].getEstado() == jugador && 
@@ -48,6 +48,6 @@ Tablero::verificarGanador(int jugador){
 	return false;
 }
 
-Tablero::actualizarCursor(int fila, int columna, bool c){
+void Tablero::actualizarCursor(int fila, int columna, bool c){
 	casillas[fila][columna].setCursor(c);
 }

@@ -1,6 +1,6 @@
 #include "GameLogic.h" 
 
-Jugador::conquistarCasilla(Casilla* casilla){
+void Jugador::conquistarCasilla(Casilla* casilla){
 	if (numConquistadas == 3) { 
 		eliminarCasilla(); 
 	} 
@@ -10,7 +10,7 @@ Jugador::conquistarCasilla(Casilla* casilla){
 	[](Casilla* a, Casilla* b) { return a->getNumeroJugada() < b->getNumeroJugada(); });
 }
 
-Jugador::eliminarCasilla() {
+void Jugador::eliminarCasilla(){
 	if (numConquistadas > 0) { 
 		casillasConquistadas[0]->setEstado(0, -1); 
 		for (int i = 1; i < numConquistadas; ++i) { 
@@ -20,10 +20,10 @@ Jugador::eliminarCasilla() {
 	}
 }
 
-Jugador::getCasillasConquistadas(){
+const std::array<Casilla*, 3>& Jugador::getCasillasConquistadas(){
 	return casillasConquistadas;
 }
 
-Jugador::getNombre(){
+std::string Jugador::getNombre(){
 	return nombre;
 }
