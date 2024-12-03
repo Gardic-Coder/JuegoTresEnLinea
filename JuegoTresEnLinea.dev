@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4;0;0;0
-UnitCount=6
+UnitCount=9
 
 [VersionInfo]
 Major=1
@@ -39,14 +39,14 @@ Build=0
 LanguageID=1033
 CharsetID=1252
 CompanyName=
-FileVersion=
+FileVersion=1.0.0.0
 FileDescription=Developed using the Dev-C++ IDE
 InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=
+ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
 
@@ -61,7 +61,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=Presentacion\GameUI.h
+FileName=Datos\DataAccess.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit3]
+FileName=Datos\DataAccess.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -71,7 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=Datos\DataAccess.h
+FileName=Logica\GameLogic.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -91,7 +101,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=Datos\DataAccess.cpp
+FileName=Presentacion\GameUI.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -100,8 +110,31 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit3]
-FileName=Logica\GameLogic.h
+[Unit7]
+FileName=Logica\Tablero.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=Logica\ControladorJuego.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit10]
+FileName=Logica\ControladorJuego.cpp
+
+[Unit8]
+FileName=Logica\Jugador.cpp
 CompileCpp=1
 Folder=
 Compile=1
