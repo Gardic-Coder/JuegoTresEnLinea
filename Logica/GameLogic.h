@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <conio.h> // Para detectar las teclas presionadas en sistemas Windows 
 #include <iostream>
+#include <vector>
 
 class Casilla {
 private:
@@ -54,29 +55,15 @@ class ControladorJuego {
 private: 
 	Tablero* tablero; 
 	Jugador* jugador1; 
-	Jugador* jugador2; 
-	int cursorFila; 
-	int cursorColumna; 
-	bool enMenu;
-	int numOpciones;
+	Jugador* jugador2;  
 	int turnos;
 	
 public: 
 	ControladorJuego(Tablero* t, Jugador* j1, Jugador* j2); 
-	ControladorJuego(int numOpcMenu);
 	~ControladorJuego();
-	void moverCursor(int nuevaFila, int nuevaColumna); 
-	void moverCursorArriba(); 
-	void moverCursorAbajo(); 
-	void moverCursorIzquierda(); 
-	void moverCursorDerecha(); 
-	void seleccionar(); 
-	void cancelar(); 
-	void guardarYSalir(); 
-	void cambiarModo();
-	void setNumOpciones(int numOpc);
-	void actualizarCursor(int nuevaPos);
-    int getCursorPos() const { return cursorFila; }
+	void moverCursor(int& cursor, vector<string> opcionesMenu, Tecla tecla);
+	void moverCursor(int& fila, int& columna, Tecla tecla);
+	
     int getTurnos() const;
 };
 
