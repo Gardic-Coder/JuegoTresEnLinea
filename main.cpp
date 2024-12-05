@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Logica/GameLogic.h"
 #include "Presentacion/GameUI.h"
 

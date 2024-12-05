@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void GameUI::mostrarMenu(int cursor, vector<string> opcionesMenu) { 
+void GameUI::mostrarMenu(int cursor, std::vector<string> opcionesMenu) { 
 	cout << PURPURA << SEPARADOR << RESET << endl;
 	for(size_t i = 0; i < opcionesMenu.size(); ++i) { // Se repite hasta imprimir todas las opciones del menu.
 		if(i == cursor) { // Si se va a imprimir la posicion donde esta el cursor se imprime una flecha.

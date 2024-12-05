@@ -1,0 +1,43 @@
+# Project: JuegoTresEnLinea
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Datos/DataAccess.o Presentacion/GameUI.o Logica/Tablero.o Logica/Jugador.o Logica/ControladorJuego.o
+LINKOBJ  = main.o Datos/DataAccess.o Presentacion/GameUI.o Logica/Tablero.o Logica/Jugador.o Logica/ControladorJuego.o
+LIBS     = -L"D:/Dev-Cpp/TDM-GCC-64/lib" -L"D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Dev-Cpp/TDM-GCC-64/include" -I"D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"D:/Dev-Cpp/TDM-GCC-64/include" -I"D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = JuegoTresEnLinea.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = D:\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Datos/DataAccess.o: Datos/DataAccess.cpp
+	$(CPP) -c Datos/DataAccess.cpp -o Datos/DataAccess.o $(CXXFLAGS)
+
+Presentacion/GameUI.o: Presentacion/GameUI.cpp
+	$(CPP) -c Presentacion/GameUI.cpp -o Presentacion/GameUI.o $(CXXFLAGS)
+
+Logica/Tablero.o: Logica/Tablero.cpp
+	$(CPP) -c Logica/Tablero.cpp -o Logica/Tablero.o $(CXXFLAGS)
+
+Logica/Jugador.o: Logica/Jugador.cpp
+	$(CPP) -c Logica/Jugador.cpp -o Logica/Jugador.o $(CXXFLAGS)
+
+Logica/ControladorJuego.o: Logica/ControladorJuego.cpp
+	$(CPP) -c Logica/ControladorJuego.cpp -o Logica/ControladorJuego.o $(CXXFLAGS)

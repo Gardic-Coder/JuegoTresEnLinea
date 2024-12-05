@@ -1,8 +1,9 @@
 // Presentacion/GameUI.h
 #pragma once
 #include <vector>
+#include <string>
 #include <conio.h>
-#include "Logica/GameLogic.h"
+#include "../Logica/GameLogic.h"
 
 enum class Tecla { ARRIBA, ABAJO, IZQUIERDA, DERECHA, ENTER, ESCAPE, G, OTRA };
  
@@ -10,10 +11,10 @@ Tecla obtenerTecla() {
 	int c = _getch(); 
 	if (c == 224) { // Flechas del teclado 
 		switch (_getch()) { 
-			case 72: return Direccion::ARRIBA; 
-			case 80: return Direccion::ABAJO; 
-			case 75: return Direccion::IZQUIERDA; 
-			case 77: return Direccion::DERECHA; 
+			case 72: return Tecla::ARRIBA; 
+			case 80: return Tecla::ABAJO; 
+			case 75: return Tecla::IZQUIERDA; 
+			case 77: return Tecla::DERECHA; 
 		} 
 	} else if (c == 13) { 
 		return Tecla::ENTER; 
@@ -27,7 +28,7 @@ Tecla obtenerTecla() {
 
 class GameUI {
 public:
-    void mostrarMenu(int cursor, vector<string> opcionesMenu);
+    void mostrarMenu(int cursor, std::vector<std::string> opcionesMenu);
     void mostrarTablero(std::array<std::array<Casilla, 3>, 3> casillas);
     void acercaDelJuego();
 	void ayuda();
