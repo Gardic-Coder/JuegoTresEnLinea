@@ -6,25 +6,6 @@
 #include "../Logica/GameLogic.h"
 
 enum class Tecla { ARRIBA, ABAJO, IZQUIERDA, DERECHA, ENTER, ESCAPE, G, OTRA };
- 
-Tecla obtenerTecla() { 
-	int c = _getch(); 
-	if (c == 224) { // Flechas del teclado 
-		switch (_getch()) { 
-			case 72: return Tecla::ARRIBA; 
-			case 80: return Tecla::ABAJO; 
-			case 75: return Tecla::IZQUIERDA; 
-			case 77: return Tecla::DERECHA; 
-		} 
-	} else if (c == 13) { 
-		return Tecla::ENTER; 
-	} else if (c == 27) { 
-		return Tecla::ESCAPE; 
-	} else if (c == 'g' || c == 'G') { 
-		return Tecla::G; 
-	}
-	return Tecla::OTRA; // Valor por defecto 
-}
 
 class GameUI {
 public:

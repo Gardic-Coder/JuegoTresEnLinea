@@ -1,8 +1,8 @@
 #include "GameLogic.h"
 
 ControladorJuego::ControladorJuego(Tablero& t, Jugador& j1, Jugador& j2)
-    : tablero(t), jugador1(j1), jugador2(j2), cursorFila(0), cursorColumna(0), enMenu(false), numOpciones(-1), turnos(1) {
-    tablero->actualizarCursor(cursorFila, cursorColumna, true);
+    : tablero(t), jugador1(j1), jugador2(j2), turnos(1) {
+    tablero.actualizarCursor(cursorFila, cursorColumna, true);
 }
 
 ControladorJuego::~ControladorJuego() { 

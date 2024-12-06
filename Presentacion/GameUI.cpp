@@ -27,13 +27,13 @@ void mostrarTablero(array<array<Casilla, 3>, 3> casillas) {
 	for (const auto& fila : casillas) { 
 		cout << "			";
 		for (const auto& casilla : fila) {
-			if(Casilla.getCursor()){
+			if(Casilla::getCursor()){
 				cout << VERDE << "{ ";
 			} else {
 				cout << PURPURA << "{ ";
 			}
 			cout << YELLOW;
-			estado = Casilla.getEstado();
+			estado = Casilla::getEstado();
 			if(estado == 1){
 				cout << "X";
 			} else if(estado == 2){
@@ -41,7 +41,7 @@ void mostrarTablero(array<array<Casilla, 3>, 3> casillas) {
 			} else {
 				cout << " ";
 			}
-			if(Casilla.getCursor()){
+			if(Casilla::getCursor()){
 				cout << VERDE << " }";
 			} else {
 				cout << PURPURA << " }";
@@ -75,13 +75,13 @@ void GameUI::ayuda() {
 	char c = 16; // Para imprimir el caracter ASCII de una flecha.
 	cout << PURPURA << SEPARADOR << RESET << endl;
 	cout << PURPURA << "		+++++++ " << YELLOW << "COMO SE JUEGA" << PURPURA << " +++++++" << RESET << endl;
-	cout << endl << Yellow << "	->" << RESET << " Selecciona una casilla para capturarla." << endl;
-	cout << Yellow << "	->" << RESET << " Captura 3 casillas alineadas para ganar." << endl;
-	cout << Yellow << "	->" << RESET << " Evita que tu adversario conquiste 3 casillas alineadas." << endl;
+	cout << endl << YELLOW << "	->" << RESET << " Selecciona una casilla para capturarla." << endl;
+	cout << YELLOW << "	->" << RESET << " Captura 3 casillas alineadas para ganar." << endl;
+	cout << YELLOW << "	->" << RESET << " Evita que tu adversario conquiste 3 casillas alineadas." << endl;
 	cout << PURPURA << SEPARADOR << RESET << endl;
 	cout << PURPURA << "		+++++++ " << YELLOW << "CONSEJOS" << PURPURA << " +++++++" << RESET << endl;
-	cout << endl << Yellow << "	->" << RESET << " Capturar la casilla del centro al principio suele ser la mejor estrategia." << endl;
-	cout << Yellow << "	->" << RESET << " Si el centro ya esta ocupado, opta por una de las esquinas." << endl;
+	cout << endl << YELLOW << "	->" << RESET << " Capturar la casilla del centro al principio suele ser la mejor estrategia." << endl;
+	cout << YELLOW << "	->" << RESET << " Si el centro ya esta ocupado, opta por una de las esquinas." << endl;
 	cout << PURPURA << SEPARADOR << RESET << endl;
 	cout << PURPURA << "		+++++++ " << YELLOW << "CONTROLES" << PURPURA << " +++++++" << RESET << endl;
 	cout << endl << PURPURA << "	[Flechas direccionales]" << RESET << " 	Mover cursor." << endl;

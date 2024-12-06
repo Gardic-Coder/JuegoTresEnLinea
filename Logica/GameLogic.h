@@ -54,13 +54,13 @@ public:
 
 class ControladorJuego { 
 private: 
-	Tablero* tablero; 
-	Jugador* jugador1; 
-	Jugador* jugador2;  
+	Tablero tablero; 
+	Jugador jugador1; 
+	Jugador jugador2;  
 	int turnos;
 	
 public: 
-	ControladorJuego(Tablero* t, Jugador* j1, Jugador* j2); 
+	ControladorJuego(Tablero& t, Jugador& j1, Jugador& j2); 
 	~ControladorJuego();
 	void moverCursor(int& cursor, std::vector<std::string> opcionesMenu, Tecla tecla);
 	void moverCursor(int& fila, int& columna, Tecla tecla);
